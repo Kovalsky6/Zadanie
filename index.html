@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="liczbaA"><input type="number" id="liczbaA"></label>
+        <label for="liczbaB"><input type="number" id="liczbaB"></label>
+        <label for="liczbaC"><input type="number" id="liczbaC"></label>
+        <button onclick="plus()">OBLICZ</button>
+        <span id="wynik"></span>
+    </div>
+    <div>
+        <br><label for="liczbaD"><input type="number" id="liczbaD"></label>
+        <label for="liczbaE"><input type="number" id="liczbaE"></label>
+        <label for="liczbaF"><input type="number" id="liczbaF"></label>
+        <button onclick="srednia()">OBLICZ</button>
+        <span id="swynik"></span>
+    </div>
+    <div>
+        <br><label for="liczbaG"><input type="number" id="liczbaG"></label>
+        <label for="liczbaH"><input type="number" id="liczbaH"></label>
+        <button onclick="suma()">OBLICZ</button>
+        <span id="sumawynik"></span>
+    </div>
+    <div>
+        <br><label for="liczbaI"><input type="number" id="liczbaI"></label>
+        <button onclick="pierwiastek()">OBLICZ</button>
+        <span id="pwynik"></span>
+    </div>
+    <div>
+        <br><label for="liczbaJ"><input type="number" id="liczbaJ"></label>
+        <button onclick="kwadrat()">OBLICZ</button>
+        <span id="kwynik"></span>
+    </div>
+    
+    <div>
+        <br><label for="liczbaK"><input type="number" id="liczbaK"></label>
+        <label for="liczbaL"><input type="number" id="liczbaL"></label>
+        <label for="liczbaM"><input type="number" id="liczbaM"></label>
+        <button onclick="prostopadloscian()">OBLICZ</button>
+        <span id="prowynik"></span>
+    </div>
+    <div>
+        <br><label for="liczbaN"><input type="number" id="liczbaN"></label>
+        <button onclick="kolo()">OBLICZ</button>
+        <span id="kolowynik"></span>
+    </div>
+    <div>
+        <br><label for="liczbaO"><input type="number" id="liczbaO"></label>
+        <button onclick="benzyna()">OBLICZ</button>
+        <span id="bwynik"></span>
+    </div>
+    <div>
+        <br><label for="liczbaP"><input type="number" id="liczbaP"></label>
+        <label for="liczbaR"><input type="number" id="liczbaR"></label>
+        <label for="liczbaS"><input type="number" id="liczbaS"></label>
+        <button onclick="cenabenzyny()">OBLICZ</button>
+        <span id="cwynik"></span>
+    </div>
+    <div>
+        <br><label for="liczbaT"><input type="number" id="liczbaT"></label>
+        <button onclick="zysk()">OBLICZ</button>
+        <span id="zwynik"></span>
+    </div>
+
+ 
+
+    <script>
+        function plus() {
+            let liczbaA = parseInt(document.getElementById('liczbaA').value)
+            let liczbaB = parseInt(document.getElementById('liczbaB').value)
+            let liczbaC = parseInt(document.getElementById('liczbaC').value)
+            var wynik = liczbaA + liczbaB + liczbaC;
+            document.getElementById('wynik').innerText = `Wynik to ${wynik}`;
+        }
+        function srednia() {
+            let liczbaD = parseInt(document.getElementById('liczbaD').value)
+            let liczbaE = parseInt(document.getElementById('liczbaE').value)
+            let liczbaF = parseInt(document.getElementById('liczbaF').value)
+            var wynik = (liczbaD + liczbaE + liczbaF)/3;
+            document.getElementById('swynik').innerText = `Wynik to ${wynik}`;
+        }
+        function suma() {
+            let liczbaG = parseInt(document.getElementById('liczbaG').value)
+            let liczbaH = parseInt(document.getElementById('liczbaH').value)
+            var wynik1 = liczbaG + liczbaH;
+            var wynik2 = liczbaG - liczbaH;
+            var wynik3 = liczbaG / liczbaH;
+            document.getElementById('sumawynik').innerText = `suma: ${wynik1} roznica: ${wynik2} iloczyn: ${wynik3}`
+        }
+        function pierwiastek() {
+            let liczbaI = parseInt(document.getElementById('liczbaI').value)
+            var wynik =Math.sqrt(liczbaI);
+            document.getElementById('pwynik').innerText = `Wynik to ${wynik}`;
+        }
+        function kwadrat() {
+            let liczbaJ = parseInt(document.getElementById('liczbaJ').value)
+            var wynik = liczbaJ * liczbaJ;
+            document.getElementById('kwynik').innerText = `Wynik to ${wynik}`;
+        }
+        function prostopadloscian() {
+            let liczbaK = parseInt(document.getElementById('liczbaK').value)
+            let liczbaL = parseInt(document.getElementById('liczbaL').value)
+            let liczbaM = parseInt(document.getElementById('liczbaM').value)
+            var wynik = 2 * liczbaK * liczbaL + 2 * liczbaL * liczbaM + 2 * liczbaK * liczbaM;
+            document.getElementById('prowynik').innerText = `Wynik to ${wynik}`;
+        }
+        function kolo() {
+            let liczbaN = parseInt(document.getElementById('liczbaN').value)
+            var wynik4 =(liczbaN/2) * (liczbaN/2) * 3.14;
+            var wynik5 =liczbaN * 3.14;
+            document.getElementById('kolowynik').innerText = `pole: ${wynik4} obwod: ${wynik5}`
+        }
+        function benzyna() {
+            let liczbaO = parseInt(document.getElementById('liczbaO').value)
+            var wynik = 360/(100/8)*liczbaO;
+            document.getElementById('bwynik').innerText = `Wynik to ${wynik}`;
+        }
+        function cenabenzyny() {
+            let liczbaP = parseInt(document.getElementById('liczbaP').value)
+            let liczbaR = parseInt(document.getElementById('liczbaR').value)
+            let liczbaS = parseInt(document.getElementById('liczbaS').value)
+            var wynik = (liczbaR/(100/liczbaP))*liczbaS;
+            document.getElementById('cwynik').innerText = `Wynik to ${wynik}`;
+        }
+            function zysk() {
+            let liczbaT = parseInt(document.getElementById('liczbaT').value)
+            var wynik =liczbaT * 1.08 - 0.19;
+            document.getElementById('zwynik').innerText = `Wynik to ${wynik}`;
+        }
+    </script>
+</body>
+</html>
